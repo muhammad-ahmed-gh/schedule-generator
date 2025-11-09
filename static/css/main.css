@@ -1,9 +1,14 @@
 /* start global rules */
 :root {
-  --main-color: #007bff;
+  --main-color: #1787ff;
+  --main-color-light: #d6eaff;
   --light-text-color: #676767;
   --header-height: 65px;
   --main-transition: 0.3s;
+  --top-prior: #b30000;
+  --high-prior: #fa5656;
+  --mid-prior: #ffaa00;
+  --low-prior: #1aff00;
 }
 
 * {
@@ -16,8 +21,9 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Cairo", sans-serif;
+body,
+button {
+  font-family: "Open sans", sans-serif;
 }
 
 ul {
@@ -160,3 +166,173 @@ header .account img {
   max-width: 100%;
 }
 /* end header */
+
+/* start main */
+main {
+  min-height: calc(100vh - var(--header-height));
+  background-color: #f9f9f9;
+}
+
+main .welcome {
+  padding-top: 50px;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+main .user {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+
+main .msg {
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px var(--main-color) dashed;
+  border-radius: 7px;
+  background-color: var(--main-color-light);
+}
+
+main .msg .num-tasks {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+main .schedule {
+  display: flex;
+  margin-top: 70px;
+  border-radius: 3px;
+  overflow: auto;
+  background-color: #efefef;
+  border: 1px #cfcfcf solid;
+}
+
+main .schedule::-webkit-scrollbar {
+  height: 12px;
+}
+
+main .schedule::-webkit-scrollbar-track {
+  background-color: #bbb;
+}
+
+main .schedule::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+main .schedule::-webkit-scrollbar-thumb:hover {
+  background-color: #d3d3d3;
+}
+
+main .day {
+  flex: 1;
+}
+
+main .day:not(:last-child) {
+  border-right: 1px #cfcfcf solid;
+}
+
+main .day .head {
+  padding: 5px;
+  border-bottom: 1px #cfcfcf solid;
+  color: var(--light-text-color);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+main .day .tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  min-height: 300px;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+main .task {
+  --task-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 150px;
+  padding: 10px;
+  border-left: 5px var(--task-color) solid;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 3px #0000002e;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+main .task:hover {
+  box-shadow: 2px 2px 5px #00000038;
+}
+
+main .task.top-prior {
+  --task-color: var(--top-prior);
+}
+
+main .task.high-prior {
+  --task-color: var(--high-prior);
+}
+
+main .task.mid-prior {
+  --task-color: var(--mid-prior);
+}
+
+main .task.low-prior {
+  --task-color: var(--low-prior);
+}
+
+main .task .task-name {
+  padding: 0 5px;
+  border-radius: 5px;
+  background-color: var(--task-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .task.top-prior .task-name {
+  color: white;
+}
+
+main .task .task-prior {
+  color: var(--task-color);
+  margin-bottom: 5px;
+}
+
+main .task .task-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--light-text-color);
+  max-height: 70px; /* in case browser isn't compatible */
+}
+
+main .add-task {
+  display: block;
+  padding: 10px 20px;
+  margin: 30px auto;
+  border: 1px transparent solid;
+  outline: none;
+  border-radius: 9999px;
+  background-color: var(--main-color);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+main .add-task:hover {
+  background-color: white;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+/* end main */
