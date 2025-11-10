@@ -417,11 +417,20 @@ footer .title {
 
 footer .social {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
 }
 
 footer .social a {
   color: var(--light-text-color-alt);
   text-decoration: none;
+  transition: var(--main-transition);
+}
+
+footer .social a:hover {
+  color: #212121;
+  transform: translateY(-2px);
 }
 
 footer .desc {
@@ -440,6 +449,7 @@ footer .links a {
 
 footer .links a:hover {
   padding-left: 20px;
+  color: #212121;
 }
 
 footer .info {
