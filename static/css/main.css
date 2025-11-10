@@ -124,6 +124,24 @@ header .bars span {
   height: 3px;
   border-radius: 9999px;
   background-color: #777;
+  transition: var(--main-transition);
+}
+
+header .open .bars span {
+  background-color: #fe6262;
+}
+
+header .open .bars :first-child {
+  transform: translateY(calc(3px + 5px)) rotate(45deg);
+}
+
+header .open .bars :nth-child(2) {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+header .open .bars :last-child {
+  transform: translateY(calc(-3px - 5px)) rotate(-45deg);
 }
 
 header ul {
