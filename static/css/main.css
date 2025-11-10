@@ -456,14 +456,14 @@ footer .info {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 15px;
+  padding-top: 15px;
 }
 
 @media (max-width: 767px) {
   footer .info {
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   footer .info p {
