@@ -152,11 +152,18 @@ header ul a {
   display: flex;
   align-items: center;
   height: var(--header-height);
-  padding: 0 10px;
+  padding: 0 20px;
+  box-shadow: 0 1px 0 transparent;
   color: var(--light-text-color);
   text-decoration: none;
   text-transform: capitalize;
   transition: var(--main-transition);
+}
+
+header ul a:hover {
+  background-color: #f5f5f5;
+  color: var(--main-color);
+  box-shadow: 0 1px 0 var(--main-color);
 }
 
 @media (max-width: 575px) {
@@ -166,13 +173,13 @@ header ul a {
     padding-bottom: 10px;
     border-bottom: 1px var(--main-border-color) solid;
     background-color: #f3f3f3;
+    box-shadow: none;
   }
-}
-
-header ul a:hover {
-  color: var(--main-color);
-  background-color: #eee;
-  border-color: var(--main-color);
+  header ul a:hover {
+    background-color: #eaeaea;
+    border-color: var(--main-color);
+    box-shadow: none;
+  }
 }
 
 header .account {
