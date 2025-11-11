@@ -488,6 +488,9 @@ footer .info {
   align-items: center;
   gap: 15px;
   padding-top: 15px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 767px) {
