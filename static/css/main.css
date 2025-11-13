@@ -313,7 +313,7 @@ main .day:not(:last-child) {
 }
 
 main .day .head {
-  padding: 5px;
+  padding: 5px 15px;
   border-bottom: 1px var(--schedule-border-color) solid;
   color: var(--light-text-color);
   text-align: center;
@@ -326,8 +326,6 @@ main .day .tasks {
   gap: 10px;
   padding: 15px;
   height: 400px;
-  min-width: 150px;
-  max-width: 200px;
   overflow: auto;
 }
 
@@ -353,7 +351,7 @@ main .task {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  min-width: 150px;
+  width: 150px;
   padding: 10px;
   border-left: 5px var(--task-color) solid;
   border-radius: 5px;
