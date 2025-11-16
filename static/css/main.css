@@ -28,6 +28,7 @@
 }
 
 * {
+  font-family: "Open sans", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -37,11 +38,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body,
-button {
-  font-family: "Open sans", sans-serif;
-}
-
 ::selection {
   background-color: var(--main-color);
   color: white;
@@ -49,6 +45,103 @@ button {
 
 ul {
   list-style: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #0005;
+}
+
+.task-prop-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: white;
+  border-radius: 5px;
+  padding: 15px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-prop-box .task-prop-box-title {
+  text-align: center;
+  color: var(--light-text-color);
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.task-prop-box .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.task-prop-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.task-prop-field .task-prop-label {
+  cursor: text;
+}
+
+.task-prop-field .task-prop-input-field {
+  outline: none;
+  border: none;
+  border-bottom: 2px #ccc solid;
+  background-color: #f9f9f9;
+  padding: 8px 10px;
+  font-size: 15px;
+  width: 200px;
+  transition: var(--main-transition);
+}
+
+.task-prop-field .task-prop-input-field:focus {
+  border-color: var(--main-color);
+}
+
+.task-prop-box textarea {
+  resize: none;
+}
+
+.task-prop-box .options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px transparent solid;
+  outline: none;
+  border-radius: 9999px;
+  background-color: var(--main-color);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--main-color);
+  border-color: var(--main-color);
 }
 
 .container {
@@ -186,7 +279,7 @@ header ul a {
 }
 
 header ul a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -419,24 +512,6 @@ main .actions {
   margin: 50px 0;
 }
 
-main .btn {
-  padding: 10px 20px;
-  border: 1px transparent solid;
-  outline: none;
-  border-radius: 9999px;
-  background-color: var(--main-color);
-  color: white;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--main-transition);
-}
-
-main .btn:hover {
-  background-color: white;
-  color: var(--main-color);
-  border-color: var(--main-color);
-}
 /* end main */
 
 /* start footer */
